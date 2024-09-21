@@ -1,1 +1,14 @@
 # IPT-PRAC
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Webpage</title>
+</head>
+<body>
+    <h1>Welcome to My Simple Webpage</h1>
+    <p>This is a basic webpage created using HTML. HTML stands for HyperText Markup Language and is used to create the structure of web pages.</p>
+</body>
+</html>
