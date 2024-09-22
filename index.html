@@ -3,62 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Web Page</title>
+    <title>Interactive Web Page with Animation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
+            text-align: center;
         }
+
         header {
-            background: #007BFF;
+            background-color: #007BFF;
             color: white;
-            padding: 10px 0;
-            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
         }
+
         section {
-            margin: 20px 0;
             padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 1s forwards;
         }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #007BFF;
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Welcome to My Simple Web Page</h1>
+    <h1>Interactive Web Page with Animation</h1>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>Hello! This is a simple web page created as a demonstration of basic HTML and CSS. You can customize it as you like!</p>
+<section id="content">
+    <h2>Click the Buttons Below</h2>
+    <p id="message">No action taken yet.</p>
+    <button onclick="sayHello()">Say Hello</button>
+    <button onclick="changeColor()">Change Background Color</button>
 </section>
 
-<section>
-    <h2>My Interests</h2>
-    <ul>
-        <li>Web Development</li>
-        <li>Programming</li>
-        <li>Design</li>
-        <li>Music</li>
-    </ul>
-</section>
+<script>
+    // Function to display a message
+    function sayHello() {
+        document.getElementById("message").textContent = "Hello, welcome to the web page!";
+    }
 
-<footer>
-    <p>&copy; 2024 My Simple Web Page</p>
-</footer>
+    // Function to change the background color of the section
+    function changeColor() {
+        var colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FF5733'];
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById("content").style.backgroundColor = randomColor;
+    }
+</script>
 
 </body>
 </html>
